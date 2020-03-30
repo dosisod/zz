@@ -4,4 +4,7 @@ include_directories(../src/)
 
 target_link_libraries(
 	Test
+	router
+	route
+	zz
 )

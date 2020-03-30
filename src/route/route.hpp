@@ -5,12 +5,12 @@
 
 class Route {
 public:
-	Route(const std::string address, const std::function<std::string()> func);
+	Route(const std::string address, const std::function<std::string(void)> func);
 
 	bool matches(const std::string address) const;
-	void run() const;
+	std::string run() const;
 
 private:
 	const std::string address;
-	const std::function<std::string()> func;
+	const std::function<std::string(void)> func;
 };

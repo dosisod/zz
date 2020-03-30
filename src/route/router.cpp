@@ -1,7 +1,7 @@
 #include "router.hpp"
 #include "route.hpp"
 
-void Router::route(const std::string address, const std::function<std::string()> func) {
+void Router::route(const std::string address, const std::function<std::string(void)> func) {
 	routes.emplace_back(address, func);
 }
 

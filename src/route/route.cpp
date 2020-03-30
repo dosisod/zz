@@ -1,6 +1,6 @@
 #include "route.hpp"
 
-Route::Route(const std::string address, const std::function<std::string()> func) :
+Route::Route(const std::string address, const std::function<std::string(void)> func) :
 	address(address),
 	func(func)
 	{}
@@ -9,6 +9,6 @@ bool Route::matches(const std::string address) const {
 	return this->address==address;
 }
 
-void Route::run() const {
-	func();
+std::string Route::run() const {
+	return func();
 }

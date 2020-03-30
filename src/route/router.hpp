@@ -10,7 +10,7 @@ class Router {
 public:
 	Router() {}
 
-	void route(const std::string address, const std::function<std::string()> func);
+	void route(const std::string address, const std::function<std::string(void)> func);
 
 	void execute(const std::string address) const;
 
