@@ -2,7 +2,7 @@
 
 #include "zz.hpp"
 
-zz::zz(std::string const address, unsigned int const port) :
+zz::zz(const std::string address, const unsigned int port) :
 	address(address),
 	port(port)
 	{}

@@ -5,9 +5,9 @@
 
 class Route {
 public:
-	Route(std::string const address, std::function<std::string()> const func);
+	Route(const std::string address, const std::function<std::string()> func);
 
-	bool matches(std::string address) const;
+	bool matches(const std::string address) const;
 	void run() const;
 
 private:

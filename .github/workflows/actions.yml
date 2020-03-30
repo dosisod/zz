@@ -1,0 +1,21 @@
+name: tests
+
+on: [push, pull_request]
+
+jobs:
+  build-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup
+      run: |
+        mkdir build
+        cd build
+        cmake --version
+        cmake ..
+    - name: Build
+      run: |
+        cd build/
+        cmake --build .
+    - name: Run tests
+      run: ./build/test/Test

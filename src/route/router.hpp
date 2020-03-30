@@ -10,9 +10,9 @@ class Router {
 public:
 	Router() {}
 
-	void route(std::string const address, std::function<std::string()> const func);
+	void route(const std::string address, const std::function<std::string()> func);
 
-	void execute(std::string const address) const;
+	void execute(const std::string address) const;
 
 private:
 	std::vector<Route> routes;
