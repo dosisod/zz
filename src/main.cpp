@@ -7,7 +7,5 @@ int main() {
 		return "hi";
 	});
 
-	app.run();
-
-	return 0;
+	return app.run();
 }

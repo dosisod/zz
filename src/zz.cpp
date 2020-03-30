@@ -7,6 +7,8 @@ zz::zz(const std::string address, const unsigned int port) :
 	port(port)
 	{}
 
-void zz::run() const {
+int zz::run() const {
 	std::cout << "zz -> " << address << ":" << port << "\n";
+
+	return 0;
 }

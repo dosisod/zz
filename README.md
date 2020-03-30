@@ -1,20 +1,18 @@
 # zz
 
-[experimental] Modern web framework for C++
+[experimental] Modern web framework for C++17
 
 ```cpp
 #include "zz.hpp"
 
 int main() {
-	auto app=zz("localhost", 5000);
+    auto app=zz("localhost", 5000);
 
-	app.route("/", [=]{
-		return "hi";
-	});
+    app.route("/", [=]{
+        return "hi";
+    });
 
-	app.run();
-
-	return 0;
+    return app.run();
 }
 ```
 

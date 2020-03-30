@@ -9,7 +9,10 @@ int testzz() {
 	auto app=zz("localhost", 5000);
 
 	//test app can be ran
-	app.run();
+	const int status=app.run();
+
+	//assert app ran w/o errors
+	assert(status == 0);
 
 	return errors;
 }

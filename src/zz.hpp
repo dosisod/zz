@@ -8,7 +8,7 @@ class zz : public Router {
 public:
 	zz(const std::string address, const unsigned int port);
 
-	void run() const;
+	int run() const;
 
 private:
 	const std::string address;
