@@ -5,8 +5,10 @@ void Router::route(const std::string address, const std::function<std::string(vo
 	routes.emplace_back(address, func);
 }
 
-void Router::execute(const std::string address) const {
+std::string Router::execute(const std::string address) const {
 	for (const auto& route : routes)
 		if (route.matches(address))
-			route.run();
+			return route.run();
+
+	return "<pre>Error 404: \"" + address + "\" not found.</pre>";
 }

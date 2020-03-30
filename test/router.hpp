@@ -18,8 +18,18 @@ int testRouter() {
 	auto r=Router();
 
 	r.route("/", []{ return "hello from index!"; } );
-	r.execute("/");
-	r.execute("/not-slash");
+	auto ret=r.execute("/");
+
+	assert( ret == "hello from index!" );
+}
+
+{
+	//test non-existent route handling
+	auto r=Router();
+
+	auto ret=r.execute("/not-a-route");
+
+	assert(ret == "<pre>Error 404: \"/not-a-route\" not found.</pre>" );
 }
 
 {
