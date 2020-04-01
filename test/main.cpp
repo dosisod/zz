@@ -3,6 +3,7 @@
 #include "route.hpp"
 #include "router.hpp"
 #include "zz.hpp"
+#include "template.hpp"
 
 int main() {
 	int errors=0;
@@ -10,6 +11,7 @@ int main() {
 	errors+=testRoute();
 	errors+=testRouter();
 	errors+=testzz();
+	errors+=testTemplate();
 
 	if (errors == 1) {
 		std::cout << "1 error occurred.\n";
