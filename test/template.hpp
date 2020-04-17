@@ -40,5 +40,11 @@ int testTemplate() {
 	assert(t.parseAny(s) == "hello");
 }
 
+{
+	//test template parameter replacement
+	auto t=Template("../test/data/one-param.html");
+	assert(t.render({"param", "testing"}) == "<p>testing</p>\n");
+}
+
 	return errors;
 }

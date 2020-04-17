@@ -1,11 +1,32 @@
 #include <fstream>
 #include <sstream>
+#include <utility>
+#include <regex>
 
 #include "template.hpp"
 
 Template::Template(const std::string filename) :
 	filename(filename)
 	{}
+
+std::string Template::render(const std::pair<std::string, std::any> data) const {
+	std::ifstream filestream(filename);
+	std::stringstream buffer;
+	buffer << filestream.rdbuf();
+
+	if (buffer.good()) {
+		std::string html=buffer.str();
+		html=regex_replace(
+			html,
+			std::regex("\\{\\{ " + data.first + " \\}\\}"),
+			parseAny(data.second)
+		);
+
+		return html;
+	}
+
+	return "<pre>Could not find template \"" + filename + "\"</pre>";
+}
 
 std::string Template::render() const {
 	std::ifstream filestream(filename);
